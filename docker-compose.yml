@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  backend: 
+    build: ./backend
+    ports: 
+      - 3000:3000
+    environments:
+      - DB_URL=mongodb://database/BANKINGAPP
+  frontend:
+    build: ./frontend
+    ports:
+      - 3001:3001
+  database:
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    volumes: 
+      - BANKINGAPP:/data/db
+volumes:
+  BANKINGAPP
+
