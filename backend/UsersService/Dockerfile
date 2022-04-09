@@ -1,9 +1,9 @@
 FROM node:17
 
-COPY . /src
-
 WORKDIR /src
+
+COPY . /src
 
 RUN npm install
 
-CMD npm start
+CMD ["npm", "start"]
