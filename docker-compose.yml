@@ -1,8 +1,8 @@
 version: "3.9"
 
 services:
-  backend: 
-    build: ./backend
+  backend_users: 
+    build: ./backend/UsersService
     ports: 
       - 3001:3001
     environment:
