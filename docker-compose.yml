@@ -5,6 +5,8 @@ services:
     build: ./backend/UsersService
     ports: 
       - 3001:3001
+    depends_on:
+      - database
     environment:
       DB_URL: mongodb://database/BANKINGAPP
   frontend:
@@ -17,6 +19,16 @@ services:
       - 27017:27017
     volumes: 
       - BANKINGAPP:/data/db
+  nginx:
+    image: nginx:latest
+    ports:
+      - 4000:4000
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend_users
+      - frontend
+      - database
 volumes:
   BANKINGAPP:
 
