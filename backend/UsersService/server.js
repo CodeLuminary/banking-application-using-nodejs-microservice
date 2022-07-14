@@ -11,6 +11,12 @@ app.use(cors(
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
+app.get('/',(req,res)=>{
+    res.send({
+        isSuccessful: true,
+        message: 'I worked'
+    })
+})
 
 app.all('/*',(req,res)=>{
      res.status(404).send({
