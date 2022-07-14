@@ -25,7 +25,7 @@ app.all('/*',(req,res)=>{
      //res.sendFile(path.join(__dirname,'static/error-page.html'))  
  })
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 app.listen(port, () =>{
     console.log(`Server ${process.pid} started on port ${port}`)
 });

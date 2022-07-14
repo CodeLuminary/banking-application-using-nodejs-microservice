@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,10 +19,10 @@
     "express-rate-limit": "^5.5.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
-    "multer": "^1.4.3",
-    "mysql2": "^2.3.3",
-    "nodemailer": "^6.7.0",
-    "web3": "^1.7.1",
-    "sequelize": "^6.17.0"
+    "node-fetch": "^3.2.8",
+    "nodemailer": "^6.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
