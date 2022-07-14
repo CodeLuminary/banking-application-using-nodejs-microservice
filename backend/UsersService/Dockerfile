@@ -1,13 +1,15 @@
-FROM node:17
+FROM node:latest
 
 WORKDIR /src
 
-COPY package*.json ./
+COPY package*.json .
 
-RUN npm install
+RUN npm ci
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3000
 
-CMD ["npm", "start"]
+#CMD ["npm", "start"]
+
+CMD ["npm", "run", "dev"]
