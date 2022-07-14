@@ -3,3 +3,7 @@ node_modules
 kubernetes
 
 aws
+
+Dockerfile
+
+docker-compose.yml
