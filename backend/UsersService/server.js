@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const https = require('https')
 //const fetch = require("node-fetch");
 const axios = require('axios')
 
@@ -29,17 +28,7 @@ app.get('/users/yes',(req,res)=>{
 })
 
 app.get('/users/trans',(req,res)=>{
-    /*fetch("http://transaction:3000/")
-    .then(result=>result.json)
-    .then(result=>res.send(result))*/
-    /*https.request({
-        hostname: 'http://transaction:3000',
-        method: 'GET'
-    }, result=>{
-        result.on('data', d=>{
-            res.send(d)
-        })
-    })*/
+    
     axios.get('http://transaction:3000')
     .then(response=>{
         res.send(response.data)
