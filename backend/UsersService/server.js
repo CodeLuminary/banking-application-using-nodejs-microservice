@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 //const fetch = require("node-fetch");
-const axios = require('axios')
+const axios = require('axios');
+const mongoose = require('mongoose')
 
 const app = express();
 
@@ -12,6 +13,15 @@ app.use(cors(
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
+
+//Connect to mongodb
+mongoose
+  .connect(
+    'mongodb://database:27017/bankingDB',
+    { useNewUrlParser: true }
+  )
+  .then(() => console.log('MongoDB Connected yes'))
+  .catch(err => console.log(err));
 
 app.get('/users',(req,res)=>{
     res.send({
