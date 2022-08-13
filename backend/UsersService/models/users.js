@@ -25,6 +25,10 @@ const userSchema = new Schema({
     userRole: {
         type: String,
         default: 'user'
+    },
+    account_no: {
+        type: String,
+        required: true
     }
 })
 const Users = mongoose.model('users',userSchema);
