@@ -6,6 +6,6 @@ COPY . /app
 
 RUN npm install
 
-EXPOSE 3003
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
