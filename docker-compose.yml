@@ -22,9 +22,11 @@ services:
     environment:
       DB_URL: mongodb://database:27017
   frontend:
-    build: ./frontend
+    build: ./app_frontend
     ports:
       - 3003:3000
+    volumes:
+      - ./app_frontend/frontend:/src
   database:
     image: mongo:4.0-xenial
     ports:
