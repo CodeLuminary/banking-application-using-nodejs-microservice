@@ -1,7 +1,7 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
   import Gretting from '@/components/HelloUser.vue';
-  import {useBankingStore} from '@/store/banking';
+  import {useBankingStore} from '@/stores/banking';
 
   const banking = useBankingStore();
   banking.getAllUsers();
@@ -14,10 +14,6 @@
     <div class="wrapper">
       <Gretting msg="Welcome to CodeLuminary Bank" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
     </div>
   </header>
 
