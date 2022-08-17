@@ -26,7 +26,7 @@ services:
     ports:
       - 3003:3000
     volumes:
-      - ./app_frontend/frontend:/src
+      - ./app_frontend/frontend:/app
   database:
     image: mongo:4.0-xenial
     ports:
