@@ -1,5 +1,11 @@
 FROM node:latest
 
+WORKDIR /src
+
+COPY ./node .
+
+RUN npm install
+
 WORKDIR /app
 
 COPY ./frontend/package*.json .
@@ -10,11 +16,9 @@ COPY ./frontend .
 
 RUN npm run build
 
-WORKDIR /app/dist
+COPY --from=bankingapp_frontend /app/dist /src
 
-COPY ./node .
-
-RUN npm install
+WORKDIR /src
 
 EXPOSE 3000
 
