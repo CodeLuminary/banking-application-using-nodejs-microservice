@@ -10,8 +10,9 @@ defineProps({
 <template>
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
-    <span>Bank of the Nerds</span>
-    <p>Please log in as one of the following users</p>
+    <span>Bank of the Nerds</span><br/><br/>
+    <span>Location: 0.0.0.0/0</span><br/>
+    <span>Mission: To build a highly scalable, distributed, secure & fault tolerant banking system</span>
   </div>
 </template>
 

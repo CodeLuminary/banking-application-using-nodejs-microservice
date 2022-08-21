@@ -1,6 +1,5 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
-  import Gretting from '@/components/HelloUser.vue';
   import {useBankingStore} from '@/stores/banking';
 
   const banking = useBankingStore();
@@ -8,15 +7,6 @@
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <Gretting msg="Welcome to CodeLuminary Bank" />
-
-    </div>
-  </header>
-
   <RouterView />
 </template>
 
