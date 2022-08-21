@@ -12,7 +12,5 @@
 
     </div>
   </header>
-  <main>
     <Users/>
-  </main>
 </template>

@@ -3,7 +3,12 @@ import { defineStore } from 'pinia'
 export const useBankingStore = defineStore({
   id: 'bank',
   state: () => ({
-    users: {},
+    users: {
+      '1': {
+        id: 1,
+        name: 'ijoni victor'
+      }
+    },
     transactions: {}
   }),
   getters: {
