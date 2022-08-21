@@ -25,11 +25,23 @@ This application makes use of the microservice architecture where each part of t
 - Each service is isolated from each other thus services can be built using different programming languages.
 - 😁😁 Add your own to the list 😁😁
 
-### DISADVANTAGES
+### DISADVANTAGES OF MICROSERVICE ARCHITECTURE
 
 - It's a complex architecture to work with thus suitable for medium to large scale projects
 - 😁😁 Add your own to the list 😁😁
 
 ### ALTERNATIVE ARCHITECTURE
 
-An alternative architecture is the monolithic architecture which involves everything 
+An alternative architecture is the monolithic architecture which involves everything (services) been build and deploy as a single(mono) unit.
+
+### ADVANTAGES OF MONOLITHIC ARCHITECTURE
+
+- It's easy to work with and deploy
+- 😁😁 Add your own to the list 😁😁
+
+### DISADVANTAGES OF MONOLITHIC ARCHITECTURE
+
+- Suitable for small projects
+- Each part of the project cannot be scaled separately
+- Usually tied to a particular language
+- 😁😁 Add your own to the list 😁😁
