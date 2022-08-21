@@ -14,3 +14,22 @@ This is a microservice and event driven based banking application.
 - [Kubernetes](https://kubernetes.io) (Production grade container orchestration tool)
 - [Minikube](https://minikube.sigs.k8s.io) (Local cluster for testing kubernetes deployment)
 - [AWS](https://aws.amazon.com) (Cloud provider)
+
+## ARCHITECTURE
+
+This application makes use of the microservice architecture where each part of the application is broken into a separate service. Each service is tested and deployed using a container software which is Docker.
+
+### ADVANTAGES OF MICROSERVICE ARCHITECTURE
+
+- Each service can be scaled differently thus reducing down time & cost
+- Each service is isolated from each other thus services can be built using different programming languages.
+- 😁😁 Add your own to the list 😁😁
+
+### DISADVANTAGES
+
+- It's a complex architecture to work with thus suitable for medium to large scale projects
+- 😁😁 Add your own to the list 😁😁
+
+### ALTERNATIVE ARCHITECTURE
+
+An alternative architecture is the monolithic architecture which involves everything 
