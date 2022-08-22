@@ -45,3 +45,23 @@ An alternative architecture is the monolithic architecture which involves everyt
 - Each part of the project cannot be scaled separately
 - Usually tied to a particular language
 - 😁😁 Add your own to the list 😁😁
+
+## Requirements For Initial Setup
+
+This project can be setup using a couple of ways viz:
+
+- Using docker compose: docker compose is use to build,run & manage multiple containers in a single machine or in ones computer.
+- Using docker swamp: docker swamp is a container orchestration tool to run & manage containers in multiple machine.
+- Using Kubernetes: Kubernetes is a production grade tool for orchestrating multiple containers in cloud environment like AWS, GCP, Azure.
+- Using Minikube: Minikube enables the use of kubernetes in ones computer, making ones computer a node in a cluster.
+
+NB: Using docker swamp will not be documented in this project
+
+### USING DOCKER COMPOSE
+
+- [Docker Destop](https://docs.docker.com/desktop) (For building, runing multiple containers in a single machine)
+
+### USING KUBERNETES & MINIKUBE
+
+- [Kubectl](https://kubernetes.io/docs/tasks) (A command line tool for managing kubernetes clusters)
+- [Minikube](https://minikube.sigs.k8s.io) (Local cluster for testing kubernetes deployment)
