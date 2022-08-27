@@ -51,8 +51,8 @@ An alternative architecture is the monolithic architecture which involves everyt
 This project can be setup using a couple of ways viz:
 
 - Using docker compose: docker compose is use to build,run & manage multiple containers in a single machine or in ones computer.
-- Using docker swamp: docker swamp is a container orchestration tool to run & manage containers in multiple machine.
-- Using Kubernetes: Kubernetes is a production grade tool for orchestrating multiple containers in cloud environment like AWS, GCP, Azure.
+- Using docker swamp: docker swamp is a container orchestration tool to run & manage containers in multiple machines.
+- Using Kubernetes: Kubernetes is a production grade tool for orchestrating multiple containers in cloud environment like AWS, GCP, Azure etc.
 - Using Minikube: Minikube enables the use of kubernetes in ones computer, making ones computer a node in a cluster.
 
 NB: Using docker swamp will not be documented in this project
