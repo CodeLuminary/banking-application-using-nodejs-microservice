@@ -1,7 +1,9 @@
 <template>
     <div class="sidebar">
-        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="100" height="100" />
-        <h1>CodeLuminary Bank</h1>
+        <div>
+            <img alt="Vue logo" class="logo1" src="@/assets/logo.svg" width="100" height="100" />
+            <h1>CodeLuminary Bank</h1>
+        </div>
         <ul>
             <li><a>Dashboard</a></li>
             <li><a>Account</a></li>

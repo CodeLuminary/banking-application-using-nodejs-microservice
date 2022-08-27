@@ -23,7 +23,8 @@
   }
   .content{
     width: calc(100% - var(--sidebar-width));
-    margin-left: var(--sidebar-width)
+    margin-left: var(--sidebar-width);
+    padding: 20px;
   }
   body{
     margin: 0px !important;
