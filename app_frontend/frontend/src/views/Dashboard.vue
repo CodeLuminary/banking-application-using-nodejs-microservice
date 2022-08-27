@@ -1,6 +1,12 @@
+<script setup>
+  import Sidebar from '@/components/sidebar.vue';
+</script>
 <template>
   <div class="dashboard">
-    <h1>WELCOME TO dashboard</h1>
+    <Sidebar />
+    <div>
+      <h1>Yes</h1>
+    </div>
   </div>
 </template>
 
@@ -8,8 +14,6 @@
 @media (min-width: 1024px) {
   .dashboard {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
   }
 }
 </style>

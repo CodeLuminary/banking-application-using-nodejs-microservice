@@ -12,6 +12,9 @@
 
 <style>
   @import '@/assets/base.css';
+  @import '@/css/constant.css';
+
+  *{box-sizing: border-box;}
 
   #app {
     max-width: 1280px;
