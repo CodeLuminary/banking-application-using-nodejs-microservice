@@ -32,17 +32,8 @@ mongoose.connect(
 .catch(err => console.log(err));
 
 app.get('/users',(req,res)=>{
-    res.send({
-        isSuccessful: true,
-        message: 'I worked'
-    })
-})
-
-app.get('/users/yes',(req,res)=>{
-    res.send({
-        isSuccessful:true,
-        message: 'yess'
-    })
+    user.getAllUsers()
+    .then(result=>res.send(result))
 })
 
 app.get('/users/trans',(req,res)=>{
