@@ -4,7 +4,8 @@
  const banking = useBankingStore();
 
  function GotoDashboard(id){
-     location.href = "dashboard?d=" + id
+     location.href = "dashboard/" + id
+     //router.push(`/dashboard/${2}`)
  }
 </script>
 <template>

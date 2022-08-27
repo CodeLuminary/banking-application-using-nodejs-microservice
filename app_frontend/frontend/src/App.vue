@@ -16,14 +16,6 @@
 
   *{box-sizing: border-box;}
 
-  #app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-
-    font-weight: normal;
-  }
-
   header {
     line-height: 1.5;
     max-height: 100vh;
@@ -76,12 +68,6 @@
     body {
       display: flex;
       place-items: center;
-    }
-
-    #app {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 0 2rem;
     }
 
     header {
