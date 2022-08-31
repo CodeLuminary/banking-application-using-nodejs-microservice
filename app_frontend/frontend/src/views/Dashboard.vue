@@ -1,6 +1,9 @@
 <script setup>
   import Sidebar from '@/components/sidebar.vue';
-  //alert(this.$route.params.id)
+  import {useRoute} from 'vue-router';
+
+  const route = useRoute();
+  alert(route.params.id)
 </script>
 <template>
   <div class="dashboard">
