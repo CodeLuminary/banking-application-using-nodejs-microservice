@@ -31,8 +31,14 @@ const addUser = (userObject)=>{
     return new Promise((resolve,reject)=>{
         const user = new usersModel(userObject)
         user.save()
-        .then(result=>resolve(result))
-        .catch(error=>resolve(error))
+        .then(result=>resolve({
+            isSuccessful: true,
+            data:result
+        }))
+        .catch(error=>resolve({
+            isSuccessful: false,
+            data: error
+        }))
     })
 }
 
