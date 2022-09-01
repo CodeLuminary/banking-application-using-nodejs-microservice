@@ -65,3 +65,21 @@ NB: Using docker swamp will not be documented in this project
 
 - [Kubectl](https://kubernetes.io/docs/tasks) (A command line tool for managing kubernetes clusters)
 - [Minikube](https://minikube.sigs.k8s.io) (Local cluster for testing kubernetes deployment)
+
+## SETTING UP & RUNNING PROJECT
+
+### USING DOCKER COMPOSE
+
+- Fork/clone/download this repo
+
+- Open folder in a terminal
+
+- Enter and run the following command
+
+```
+docker-compose up
+```
+
+- Access the project in your browser through http://localhost:4000
+
+### USING KUBERNETES & MINIKUBE
