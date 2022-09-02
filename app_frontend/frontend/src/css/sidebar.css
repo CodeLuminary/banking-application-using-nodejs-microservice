@@ -19,7 +19,18 @@
     text-align: center;
 }
 .sidebar ul{
-    padding-left: 20px;
     list-style-type: none;
     padding-top: 30px;
+    padding-left: 0px !important;
+}
+.sidebar ul li a{
+    padding: 8px 0px 8px 20px;
+    display: block;
+    cursor: pointer;
+}
+.sidebar ul a span{
+    margin: 0px 5px;
+}
+.sidebar ul a{
+    color: #002266;
 }
