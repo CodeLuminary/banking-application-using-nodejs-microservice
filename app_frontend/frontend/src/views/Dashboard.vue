@@ -3,7 +3,7 @@
   import {useRoute} from 'vue-router';
 
   const route = useRoute();
-  alert(route.params.id)
+  //alert(route.params.id)
 </script>
 <template>
   <div class="dashboard">
@@ -15,7 +15,6 @@
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
   .dashboard {
     min-height: 100vh;
     width: 100%;
@@ -28,10 +27,12 @@
     width: calc(100% - var(--sidebar-width));
     margin-left: var(--sidebar-width);
     padding: 20px;
+    background-color: #fafafa;
+    height: 100vh;
+    overflow-y: scroll  
   }
   body{
     margin: 0px !important;
     padding: 0px !important;
   }
-}
 </style>
