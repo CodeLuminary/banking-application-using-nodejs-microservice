@@ -2,4 +2,8 @@
     --primary-color: #428bca;
     --sidebar-width: 250px;
     --green-color:hsla(160, 100%, 37%, 1);
+    --headerBackground: linear-gradient(96.67deg, #0F4A78 0, #54A4DE 100%);
+    --white:#fff;
+    --font:'Noto Sans Mono', monospace;
+    --font2: 'Quicksand', sans-serif;
 }
