@@ -11,7 +11,7 @@
             <h1>CodeLuminary Bank</h1>
         </div>
         <ul>
-            <li><a><span><Grid/></span>Dashboard</a></li>
+            <li><a><span><Grid size="16"/></span>Dashboard</a></li>
             <li><a><span><Wallet /></span>Account</a></li>
             <li><a><span><Card /></span>Transfer</a></li>
             <li><a><span><Cash /></span>Transactions</a></li>
