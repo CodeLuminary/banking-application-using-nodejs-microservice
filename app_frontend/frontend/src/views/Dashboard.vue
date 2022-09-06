@@ -2,8 +2,12 @@
   import Sidebar from '@/components/sidebar.vue';
   import {useRoute} from 'vue-router';
 
+  import {useBankingStore} from '@/stores/banking';
+  const banking = useBankingStore();
+
   const route = useRoute();
   //alert(route.params.id)
+  
 </script>
 <template>
   <div class="dashboard">
