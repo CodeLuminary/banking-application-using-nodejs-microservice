@@ -12,7 +12,7 @@
         </div>
         <ul>
             <li><a><span><Grid size="16"/></span>Dashboard</a></li>
-            <li><a><span><Wallet /></span>Account</a></li>
+            <li><a href="/account"><span><Wallet /></span>Account</a></li>
             <li><a><span><Card /></span>Transfer</a></li>
             <li><a><span><Cash /></span>Transactions</a></li>
         </ul>
