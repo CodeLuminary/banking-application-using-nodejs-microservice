@@ -12,7 +12,18 @@
                 </p>
             </div>
         </div>
-        <div class="contentdiv">
+        <div class="contentdiv dashboard">
+            <div>
+                <h3>TOTAL TRANSACTIONS</h3>
+                <span></span>
+            </div>
+            <div>
+                <h3>TOTAL BENEFICIARIES</h3>
+                <span></span>
+            </div>
+            <div style="width: 100%">
+                <h3>LAST TRANSFER</h3>
+            </div>
         </div>
     </div>
 </template>

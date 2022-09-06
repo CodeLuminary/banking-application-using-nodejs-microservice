@@ -30,3 +30,14 @@
     background-color: #fff;
     padding: 20px;
 }
+.dashboard{
+    width: 100%; float: left;
+}
+.dashboard > div{
+    padding: 10px; 
+    float: left;
+    width: max(30%, 100px)
+}
+.dashboard span{
+    font-size: 40px; font-weight: bold;
+}

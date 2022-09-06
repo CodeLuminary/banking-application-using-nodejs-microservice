@@ -14,7 +14,7 @@
         <div v-for="user in Object.values(banking.users)" :key="user.id" class="eachUser" @click="GotoDashboard(user.id)">
         <div>
             <span>Name: {{user.name}}</span><br/>
-            <span>User Role: </span>
+            <span>User Role: {{user.role}}</span>
         </div>
         </div>
     </main>

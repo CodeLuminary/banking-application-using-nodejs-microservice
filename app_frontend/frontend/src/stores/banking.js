@@ -6,7 +6,8 @@ export const useBankingStore = defineStore({
     users: {
       '1': {
         id: 1,
-        name: 'ijoni victor'
+        name: 'ijoni victor',
+        role: 'admin'
       }
     },
     transactions: {}
