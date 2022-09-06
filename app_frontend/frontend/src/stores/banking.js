@@ -10,7 +10,8 @@ export const useBankingStore = defineStore({
         role: 'admin'
       }
     },
-    transactions: {}
+    transactions: {},
+    currentUser: {}
   }),
   getters: {
     doubleCount: (state) => state.counter * 2
@@ -33,6 +34,9 @@ export const useBankingStore = defineStore({
       catch(error){
         console.log(error)
       }
+    },
+    setCurrentUser(value){
+      this.currentUser = value;
     }
   }
 })
