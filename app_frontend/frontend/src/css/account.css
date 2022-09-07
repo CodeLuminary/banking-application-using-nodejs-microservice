@@ -4,6 +4,7 @@
     margin-right: 10px;
     border-width: 0px;
     display: inline-block;
+    cursor: pointer;
 }
 .maincontent > div:first-child{
     border-bottom: 1px solid #f2f2f2;

@@ -36,7 +36,7 @@
 .dashboard > div{
     padding: 10px; 
     float: left;
-    width: max(30%, 100px)
+    width: max(50%, 100px)
 }
 .dashboard span{
     font-size: 40px; font-weight: bold;
