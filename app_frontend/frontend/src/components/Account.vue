@@ -23,8 +23,8 @@
         </div>
         <div class="contentdiv maincontent">
             <div>
-                <button @click="setMenu(true)">Create Account</button>
-                <button @click="setMenu(false)">View Account</button>
+                <button @click="setMenu(true)" :class="{txthighlight: isCreate}">Create Account</button>
+                <button @click="setMenu(false)" :class="{txthighlight: !isCreate}">View Account</button>
             </div>
             <div>
                 <div class="createAccount" v-if="isCreate">
