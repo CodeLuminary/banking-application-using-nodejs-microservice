@@ -8,6 +8,12 @@ export const useBankingStore = defineStore({
         id: 1,
         name: 'ijoni victor',
         role: 'admin'
+      },
+      '2':{
+        id: 2,
+        name: 'victor ijoni',
+        role: 'user',
+        balance: '20000'
       }
     },
     transactions: {},
@@ -31,7 +37,7 @@ export const useBankingStore = defineStore({
         console.log(error)
       }
     },
-    setCurrentUser(value){ alert(value)
+    setCurrentUser(value){ 
       this.currentUser = value.toString();
     }
   }
