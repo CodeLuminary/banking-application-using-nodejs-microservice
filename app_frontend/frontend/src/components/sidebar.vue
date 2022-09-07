@@ -11,10 +11,10 @@
             <h1>CodeLuminary Bank</h1>
         </div>
         <ul>
-            <li><a><span><Grid size="16"/></span>Dashboard</a></li>
-            <li><a href="/account"><span><Wallet /></span>Account</a></li>
-            <li><a><span><Card /></span>Transfer</a></li>
-            <li><a><span><Cash /></span>Transactions</a></li>
+            <li><router-link to="/"><span><Grid size="16"/></span>Dashboard</router-link></li>
+            <li><router-link to="/account"><span><Wallet /></span>Account</router-link></li>
+            <li><router-link to="/transfer"><span><Card /></span>Transfer</router-link></li>
+            <li><router-link><span><Cash /></span>Transactions</router-link></li>
         </ul>
     </div>
 </template>

@@ -1,9 +1,13 @@
 <script setup>
     import {useBankingStore} from '@/stores/banking';
-    const {currentUser} = useBankingStore();
+    const banking = useBankingStore();
 
     import {ref} from "vue";
     const isCreate = ref(true);
+
+
+    const user = banking.currentUser;
+    //alert(user)
 
     function setMenu(state){
         isCreate.value = state
@@ -14,7 +18,7 @@
         <div>
             <div class="ta-header col-12">
                 <h1>
-                    ACCOUNT                  
+                    ACCOUNT {{banking.getCurrentUser}}                 
                 </h1>
                 <p>
                     Manage account here           
@@ -23,7 +27,7 @@
         </div>
         <div class="contentdiv maincontent">
             <div>
-                <button @click="setMenu(true)">Create Account</button>
+                <button :class="user" @click="setMenu(true)">Create Account</button>
                 <button @click="setMenu(false)">View Account</button>
             </div>
             <div>
