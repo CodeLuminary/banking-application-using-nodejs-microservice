@@ -34,3 +34,6 @@
 .sidebar ul a{
     color: #002266;
 }
+.highlight{
+    background-color: var(--light-green);
+}
