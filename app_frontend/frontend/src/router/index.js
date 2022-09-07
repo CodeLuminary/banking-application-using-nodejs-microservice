@@ -22,14 +22,14 @@ const router = createRouter({
           component: ()=> import('../components/UserDashboard.vue')
         },
         {
-          path: '/dashboard', name: 'main_dashboard',
-          component: ()=> import('../components/UserDashboard.vue')
-        },
-        {
           path: '/account', name: 'account',
           component: ()=> import('../components/Account.vue')
         }
       ]
+    },
+    {  
+      path: '/dashboard', name: 'dashboard2',
+      component: ()=> import('../views/Dashboard.vue') 
     }
   ]
 })
