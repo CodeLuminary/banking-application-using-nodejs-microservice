@@ -17,7 +17,7 @@ export const useBankingStore = defineStore({
       }
     },
     transactions: {},
-    currentUser: '098'
+    currentUser: ''
   }),
   getters: {
     getCurrentUser: (state)=> state.currentUser
