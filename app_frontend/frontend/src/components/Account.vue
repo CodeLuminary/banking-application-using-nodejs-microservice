@@ -5,10 +5,6 @@
     import {ref} from "vue";
     const isCreate = ref(true);
 
-
-    const user = banking.currentUser;
-    //alert(user)
-
     function setMenu(state){
         isCreate.value = state
     }
@@ -18,7 +14,7 @@
         <div>
             <div class="ta-header col-12">
                 <h1>
-                    ACCOUNT {{banking.getCurrentUser}}                 
+                    ACCOUNT            
                 </h1>
                 <p>
                     Manage account here           
@@ -27,7 +23,7 @@
         </div>
         <div class="contentdiv maincontent">
             <div>
-                <button :class="user" @click="setMenu(true)">Create Account</button>
+                <button @click="setMenu(true)">Create Account</button>
                 <button @click="setMenu(false)">View Account</button>
             </div>
             <div>
@@ -50,7 +46,42 @@
                     <button>Save</button>
                 </div>
                 <div v-else>
-                    No data available
+                    <table>
+                        <thead>
+                            <tr>
+                                <th >ID</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Role</th>
+                                <th>Account Number</th>
+                                <th>Name</th>
+                                <th>Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody v-if="banking.users[banking.currentUser].role==='user'">
+                            <tr>
+                                <td>{{banking.users[banking.currentUser].id}}</td>
+                                <td>{{banking.users[banking.currentUser].email}}</td>
+                                <td>{{banking.users[banking.currentUser].password}}</td>
+                                <td>{{banking.users[banking.currentUser].role}}</td>
+                                <td>{{banking.users[banking.currentUser].account_no}}</td>
+                                <td>{{banking.users[banking.currentUser].name}}</td>
+                                <td>{{banking.users[banking.currentUser].balance}}</td>
+                            </tr>
+                        </tbody>
+                        <tbody v-else>
+                            <tr v-for="user in Object.values(banking.users)">
+                                <td>{{user.id}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.password}}</td>
+                                <td>{{user.role}}</td>
+                                <td>{{user.account_no}}</td>
+                                <td>{{user.name}}</td>
+                                <td>{{user.balance}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
                 </div>
             </div>
         </div>
