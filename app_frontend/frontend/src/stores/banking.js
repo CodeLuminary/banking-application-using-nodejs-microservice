@@ -11,16 +11,12 @@ export const useBankingStore = defineStore({
       }
     },
     transactions: {},
-    currentUser: {}
+    currentUser: '098'
   }),
   getters: {
-    doubleCount: (state) => state.counter * 2
+    getCurrentUser: (state)=> state.currentUser
   },
   actions: {
-    increment() {
-      this.counter++
-    },
-
     async getAllUsers(){
       return this.users;
     },
@@ -35,8 +31,8 @@ export const useBankingStore = defineStore({
         console.log(error)
       }
     },
-    setCurrentUser(value){
-      this.currentUser = value;
+    setCurrentUser(value){ alert(value)
+      this.currentUser = value.toString();
     }
   }
 })
