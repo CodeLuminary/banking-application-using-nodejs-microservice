@@ -8,7 +8,7 @@
   const route = useRoute();
   
   if(route.params.id) banking.setCurrentUser(route.params.id);
-  console.log(banking.getCurrentUser)
+  if(banking.currentUser.length==0) location.href="/";
   
 </script>
 <template>
