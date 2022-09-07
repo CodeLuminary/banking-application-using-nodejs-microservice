@@ -6,7 +6,9 @@
   const banking = useBankingStore();
 
   const route = useRoute();
-  //alert(route.params.id)
+  
+  if(route.params.id) banking.setCurrentUser(route.params.id);
+  console.log(banking.getCurrentUser)
   
 </script>
 <template>
