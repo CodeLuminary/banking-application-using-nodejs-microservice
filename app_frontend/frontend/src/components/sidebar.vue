@@ -14,7 +14,7 @@
             <li><router-link to="/"><span><Grid size="16"/></span>Dashboard</router-link></li>
             <li><router-link to="/account"><span><Wallet /></span>Account</router-link></li>
             <li><router-link to="/transfer"><span><Card /></span>Transfer</router-link></li>
-            <li><router-link><span><Cash /></span>Transactions</router-link></li>
+            <li><router-link to="/Transactions"><span><Cash /></span>Transactions</router-link></li>
         </ul>
     </div>
 </template>
