@@ -7,3 +7,15 @@
     --font:'Noto Sans Mono', monospace;
     --font2: 'Quicksand', sans-serif;
 }
+table thead tr th{
+    background: #d9d9d9
+}
+table{
+    border-collapse: collapse;
+}
+th, td{
+    padding: 5px;
+}
+table tbody tr:nth-child(even) td{
+    background-color: #f2f2f2;
+}
