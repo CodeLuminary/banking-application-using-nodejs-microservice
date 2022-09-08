@@ -3,10 +3,44 @@
     const banking = useBankingStore();
 
     import {ref} from "vue";
-    const isCreate = ref(true);
+    const isCreate = ref(false);
+
+    const name = ref('');
+    const role = ref('user');
+    const account_no = ref('');
+    const email = ref('');
+    const password = ref('');
+    const balance = ref('0.00');
 
     function setMenu(state){
         isCreate.value = state
+    }
+    function addAccount(){
+        const obj = {
+            email: email.value,
+            password: password.value,
+            balance: balance.value,
+            userRole: role.value,
+            name: name.value,
+            account_no: account_no.value
+        }
+        fetch('/users/add-user',{
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+        .then(response=>response.json())
+        .then(result=>{
+            console.log(result);
+            alert("Successful");
+        })
+        .catch(error=>{
+            console.log(error)
+        })
     }
 </script>
 <template>
@@ -23,26 +57,26 @@
         </div>
         <div class="contentdiv maincontent">
             <div>
-                <button @click="setMenu(true)" :class="{txthighlight: isCreate}">Create Account</button>
                 <button @click="setMenu(false)" :class="{txthighlight: !isCreate}">View Account</button>
+                <button v-if="banking.users[banking.currentUser].role=='admin'" @click="setMenu(true)" :class="{txthighlight: isCreate}">Create Account</button>
             </div>
             <div>
                 <div class="createAccount" v-if="isCreate">
                     <label>User Role</label><br/>
-                    <select>
+                    <select v-model="role">
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                     </select><br/>
                     <label>Account Name</label><br/>
-                    <input type="text"/><br/>
+                    <input v-model="name" type="text"/><br/>
                     <label>Account Number</label><br/>
-                    <input type="text"/><br/>
+                    <input v-model="account_no" type="text"/><br/>
                     <label>User Email</label><br/>
-                    <input type="text"/><br/>
+                    <input v-model="email" type="text"/><br/>
                    <label>User Password</label><br/>
-                    <input type="text"/><br/>
+                    <input v-model="password" type="text"/><br/>
                    <label>Account Balance</label><br/>
-                    <input value="0.00" type="text"/><br/><br/>
+                    <input v-model="balance" type="text"/><br/><br/>
                     <button>Save</button>
                 </div>
                 <div v-else>
