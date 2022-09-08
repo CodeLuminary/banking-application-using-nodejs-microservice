@@ -36,7 +36,7 @@ app.get('/users',(req,res)=>{
     .then(result=>res.send(result))
 })
 
-app.post('/add-user',(req,res)=>{
+app.post('/users/add-user',(req,res)=>{
     user.addUser(req.body)
     .then(result=>res.send(result));
 })
