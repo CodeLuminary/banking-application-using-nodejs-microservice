@@ -29,9 +29,9 @@ export const useBankingStore = defineStore({
     async getUserTransactions(){
       try{
         const response = await fetch('/users')
-        const data = await response.json();
-        if(data.isSuccessful) this.users = data.users;
-        else console.log(data)
+        const result = await response.json();
+        if(result.isSuccessful) this.users = result.data;
+        else console.log(result)
       }
       catch(error){
         console.log(error)
