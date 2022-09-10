@@ -16,6 +16,7 @@
         isCreate.value = state
     }
     function addAccount(){
+        alert("loading")
         const obj = {
             email: email.value,
             password: password.value,
@@ -24,7 +25,7 @@
             name: name.value,
             account_no: account_no.value
         }
-        fetch('/users/add-user',{
+        fetch('http://localhost:4000/users/add-user',{
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
@@ -77,7 +78,7 @@
                     <input v-model="password" type="text"/><br/>
                    <label>Account Balance</label><br/>
                     <input v-model="balance" type="text"/><br/><br/>
-                    <button>Save</button>
+                    <button @click="addAccount()">Save</button>
                 </div>
                 <div v-else>
                     <table>
