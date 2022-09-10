@@ -58,7 +58,7 @@
         <div class="contentdiv maincontent">
             <div>
                 <button @click="setMenu(false)" :class="{txthighlight: !isCreate}">View Account</button>
-                <button v-if="banking.users[banking.currentUser].role=='admin'" @click="setMenu(true)" :class="{txthighlight: isCreate}">Create Account</button>
+                <button v-if="banking.users[banking.currentUser].userRole=='admin'" @click="setMenu(true)" :class="{txthighlight: isCreate}">Create Account</button>
             </div>
             <div>
                 <div class="createAccount" v-if="isCreate">
@@ -92,12 +92,12 @@
                                 <th>Balance</th>
                             </tr>
                         </thead>
-                        <tbody v-if="banking.users[banking.currentUser].role==='user'">
+                        <tbody v-if="banking.users[banking.currentUser].userRole==='user'">
                             <tr>
                                 <td>{{banking.users[banking.currentUser]._id}}</td>
                                 <td>{{banking.users[banking.currentUser].email}}</td>
                                 <td>{{banking.users[banking.currentUser].password}}</td>
-                                <td>{{banking.users[banking.currentUser].role}}</td>
+                                <td>{{banking.users[banking.currentUser].userRole}}</td>
                                 <td>{{banking.users[banking.currentUser].account_no}}</td>
                                 <td>{{banking.users[banking.currentUser].name}}</td>
                                 <td>{{banking.users[banking.currentUser].balance}}</td>
@@ -108,7 +108,7 @@
                                 <td>{{user._id}}</td>
                                 <td>{{user.email}}</td>
                                 <td>{{user.password}}</td>
-                                <td>{{user.role}}</td>
+                                <td>{{user.userRole}}</td>
                                 <td>{{user.account_no}}</td>
                                 <td>{{user.name}}</td>
                                 <td>{{user.balance}}</td>
