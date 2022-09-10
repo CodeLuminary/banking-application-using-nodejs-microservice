@@ -3,6 +3,7 @@
   import {useBankingStore} from '@/stores/banking';
 
   const banking = useBankingStore();
+  banking.setUsers();
   banking.getAllUsers();
 </script>
 

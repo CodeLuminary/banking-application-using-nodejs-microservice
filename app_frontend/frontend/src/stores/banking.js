@@ -7,12 +7,12 @@ export const useBankingStore = defineStore({
       '1': {
         id: 1,
         name: 'ijoni victor',
-        role: 'admin'
+        userRole: 'admin'
       },
       '2':{
         id: 2,
         name: 'victor ijoni',
-        role: 'user',
+        userRole: 'user',
         balance: '20000'
       }
     },
@@ -26,11 +26,18 @@ export const useBankingStore = defineStore({
     async getAllUsers(){
       return this.users;
     },
-    async getUserTransactions(){
+    async setUsers(){
       try{
-        const response = await fetch('/users')
+        const response = await fetch('http://localhost:4000/users')
         const result = await response.json();
-        if(result.isSuccessful) this.users = result.data;
+        if(result.isSuccessful) {
+          const allUsers = {};
+          for(let i = 0; i < result.data.length; i++){
+            allUsers[result.data[i].id] = result.data[i];
+          }
+          this.users = allUsers;
+          console.log(result)
+        }
         else console.log(result)
       }
       catch(error){
