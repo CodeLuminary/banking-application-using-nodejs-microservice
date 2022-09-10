@@ -45,8 +45,19 @@ const addUser = (userObject)=>{
 const getAllUsers = ()=>{
     return new Promise((resolve,reject)=>{
         usersModel.find()
-        .then(result=>resolve(result))
-        .catch(error=>resolve(error))
+        .then(result=>resolve({isSuccessful: true,data:result}))
+        .catch(error=>resolve({isSuccessful: false, data:error}))
+    })
+}
+
+const transfer = (transferObject)=>{
+    return new Promise((resolve,reject)=>{
+        usersModel.findById(transferObject.from).select('balance')
+        .then(result=>{
+            console.log(result);
+            
+        })
+        .catch(error=>{})
     })
 }
 
@@ -54,5 +65,6 @@ module.exports = {
     checkForAdmin,
     addAdminUser,
     getAllUsers,
-    addUser
+    addUser,
+    transfer
 }

@@ -35,6 +35,10 @@ app.get('/users',(req,res)=>{
     user.getAllUsers()
     .then(result=>res.send(result))
 })
+app.post('/users/transfer',(req,res)=>{
+    user.transfer(req.body)
+    .then(result=>res.send(result));
+})
 
 app.post('/users/add-user',(req,res)=>{
     user.addUser(req.body)
