@@ -94,7 +94,7 @@
                         </thead>
                         <tbody v-if="banking.users[banking.currentUser].role==='user'">
                             <tr>
-                                <td>{{banking.users[banking.currentUser].id}}</td>
+                                <td>{{banking.users[banking.currentUser]._id}}</td>
                                 <td>{{banking.users[banking.currentUser].email}}</td>
                                 <td>{{banking.users[banking.currentUser].password}}</td>
                                 <td>{{banking.users[banking.currentUser].role}}</td>
@@ -105,7 +105,7 @@
                         </tbody>
                         <tbody v-else>
                             <tr v-for="user in Object.values(banking.users)">
-                                <td>{{user.id}}</td>
+                                <td>{{user._id}}</td>
                                 <td>{{user.email}}</td>
                                 <td>{{user.password}}</td>
                                 <td>{{user.role}}</td>

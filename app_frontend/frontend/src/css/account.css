@@ -27,3 +27,6 @@
 .txthighlight{
     color: #428bca
 }
+.maincontent > div:last-child > div:last-child{
+    overflow-x: scroll;
+}
