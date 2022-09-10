@@ -33,7 +33,7 @@ export const useBankingStore = defineStore({
         if(result.isSuccessful) {
           const allUsers = {};
           for(let i = 0; i < result.data.length; i++){
-            allUsers[result.data[i].id] = result.data[i];
+            allUsers[result.data[i]._id] = result.data[i];
           }
           this.users = allUsers;
           console.log(result)
