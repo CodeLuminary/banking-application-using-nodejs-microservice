@@ -17,6 +17,9 @@ app.get('/',(req,res)=>{
         message: 'I worked transactions'
     })
 })
+app.get('/transaction/transfer',(req,res)=>{
+    
+})
 
 app.all('/*',(req,res)=>{
      res.status(404).send({
