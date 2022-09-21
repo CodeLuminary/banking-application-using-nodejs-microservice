@@ -11,7 +11,7 @@
 <template>
     <main>
         <h2>Please log in as one of the following users</h2>
-        <div v-for="user in Object.values(banking.users)" :key="user.id" class="eachUser" @click="GotoDashboard(user._id)">
+        <div v-for="user in Object.values(banking.users)" :key="user._id" class="eachUser" @click="GotoDashboard(user._id)">
         <div>
             <span>Name: {{user.name}}</span><br/>
             <span>User Role: {{user.userRole}}</span>

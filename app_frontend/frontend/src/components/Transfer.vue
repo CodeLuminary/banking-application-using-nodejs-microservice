@@ -60,11 +60,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="user in banking.personal_transactions">
-                                <td>{{user.to}</td>
-                                <td>{{user.amount}}</td>
-                                <td>{{user.isSuccessful ? `Successful`: ``}}</td>
-                                <td>{{user.timestamp}}</td>
+                            <tr v-for="trans in banking.personal_transactions" :key="trans.id">
+                                <td>{{trans.to}}</td>
+                                <td>{{trans.amount}}</td>
+                                <td>{{trans.isSuccessful ? `Successful`: ``}}</td>
+                                <td>{{trans.timestamp}}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,10 +72,13 @@
                 <div>
                     <label>To</label><br/>
                     <select v-model="toUser">
+                        <option v-for="user in Object.values(banking.users)" :key="user._id" value="user._id">
+                            {{user.name}}&nbsp;{{user.account_no}}
+                        </option>
                     </select><br/>
                     <label>Amount(USD)</label><br/>
                     <input type="number" placeholder="Enter amount here" v-model="amount"/><br/>
-                    <button>Send</button>
+                    <button @click="sendMoney()">Send</button>
                 </div>
             </div>
         </div>
