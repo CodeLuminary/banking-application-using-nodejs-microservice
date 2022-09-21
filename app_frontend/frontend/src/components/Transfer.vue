@@ -4,6 +4,34 @@
 
     import {ref} from "vue";
     const isMake = ref(false);
+    const toUser = ref('');
+    const amount = ref('');
+
+    function sendMoney(){
+        const obj = {
+            from: banking.currentUser,
+            to: toUser.value,
+            amount: amount.value
+        }
+
+        fetch('http://localhost:4000/users/transfer',{
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(obj)
+        })
+        .then(response=>response.json())
+        .then(result=>{
+            console.log(result);
+            alert("Successful");
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
 </script>
 <template>
     <div>
@@ -22,9 +50,32 @@
             </div>
             <div>
                 <div>
-                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>To</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Date/Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="user in banking.personal_transactions">
+                                <td>{{user.to}</td>
+                                <td>{{user.amount}}</td>
+                                <td>{{user.isSuccessful ? `Successful`: ``}}</td>
+                                <td>{{user.timestamp}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div>
+                    <label>To</label><br/>
+                    <select v-model="toUser">
+                    </select><br/>
+                    <label>Amount(USD)</label><br/>
+                    <input type="number" placeholder="Enter amount here" v-model="amount"/><br/>
+                    <button>Send</button>
                 </div>
             </div>
         </div>
