@@ -73,7 +73,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div v-else>
+                <div v-else class="createAccount">
                     <label>To</label><br/>
                     <select v-model="toUser">
                         <option v-for="user in Object.values(banking.users)" :key="user._id" value="user._id">
