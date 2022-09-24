@@ -19,6 +19,7 @@
     "express-rate-limit": "^5.5.0",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
+    "kafka-node": "^5.0.0",
     "mongoose": "^6.5.2"
   },
   "devDependencies": {
