@@ -19,7 +19,7 @@
             <li><router-link to="/dashboard" @click="setMenuCnt(0)" :class="{highlight: menuCnt==0}"><span><Grid size="16"/></span>Dashboard</router-link></li>
             <li><router-link @click="setMenuCnt(1)" :class="{highlight: menuCnt==1}" to="/account"><span><Wallet /></span>Account</router-link></li>
             <li><router-link @click="setMenuCnt(2)" :class="{highlight: menuCnt==2}" to="/transfer"><span><Card /></span>Transfer</router-link></li>
-            <li><router-link @click="setMenuCnt(3)" :class="{highlight: menuCnt==3}" to="/Transactions"><span><Cash /></span>Transactions</router-link></li>
+            <li><router-link @click="setMenuCnt(3)" :class="{highlight: menuCnt==3}" to="/transactions"><span><Cash /></span>Transactions</router-link></li>
         </ul>
     </div>
 </template>

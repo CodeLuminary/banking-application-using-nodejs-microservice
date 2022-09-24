@@ -41,10 +41,10 @@
     <div>
         <div class="ta-header col-12">
             <h1>
-                ACCOUNT            
+                MY TRANSFER          
             </h1>
             <p>
-                Manage account here           
+                Manage transfer here           
             </p>
         </div>
         <div class="contentdiv maincontent">
