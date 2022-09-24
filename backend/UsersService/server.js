@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const axios = require('axios');
 const mongoose = require('mongoose');
 const user = require('./controllers/userController.js')
+const kafka = require('kafka-node');
 
 const app = express();
 
@@ -31,13 +32,26 @@ mongoose.connect(
 })
 .catch(err => console.log(err));
 
+const client = new kafka.KafkaClient({kafkaHost: process.env.KAFKA_SERVER});
+const producer = new kafka.Producer(client);
+
 app.get('/users',(req,res)=>{
     user.getAllUsers()
     .then(result=>res.send(result))
 })
-app.post('/users/transfer',(req,res)=>{
-    user.transfer(req.body)
-    .then(result=>res.send(result));
+
+producer.on('ready', ()=>{
+    app.post('/users/transfer',(req,res)=>{
+        producer.send([{
+            topic: process.env.TRANSACTION_TOPIC,
+            message: JSON.stringify()
+        }], (error, data)=>{
+            if(error){console.log(error);throw error;}
+            else console.log(data)
+        })
+        user.transfer(req.body)
+        .then(result=>res.send(result));
+    })  
 })
 
 app.post('/users/add-user',(req,res)=>{
