@@ -1,32 +1,12 @@
 version: "3.9"
 
 services:
-  users: 
-    build: ./backend/UsersService
-    ports: 
-      - 3001:3000
-    volumes:
-      - ./backend/UsersService:/src
-    depends_on:
-      - database
-    environment:
-      DB_URL: mongodb://database:27017
-  transaction: 
-    build: ./backend/TransactionService
-    ports: 
-      - 3002:3000
-    volumes:
-      - ./backend/TransactionService:/src
-    depends_on:
-      - database
-    environment:
-      DB_URL: mongodb://database:27017
-  frontend:
-    build: ./app_frontend
+  database:
+    image: mongo:4.0-xenial
     ports:
-      - 3003:3000
-    volumes:
-      - ./app_frontend/frontend:/app
+      - 27017:27017
+    volumes: 
+      - mongo_db:/data/db
   zookeeper:
     container_name: zookeeper
     image: wurstmeister/zookeeper
@@ -44,12 +24,36 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     depends_on: 
       - zookeeper
-  database:
-    image: mongo:4.0-xenial
+  users: 
+    build: ./backend/UsersService
+    ports: 
+      - 3001:3000
+    volumes:
+      - ./backend/UsersService:/src
+    depends_on:
+      - database
+      - kafka
+    environment:
+      - DB_URL: mongodb://database:27017
+      - KAFKA_SERVER: kafka:9092
+  transaction: 
+    build: ./backend/TransactionService
+    ports: 
+      - 3002:3000
+    volumes:
+      - ./backend/TransactionService:/src
+    depends_on:
+      - database
+      - kafka
+    environment:
+      - DB_URL: mongodb://database:27017
+      - KAFKA_SERVER: kafka:9092
+  frontend:
+    build: ./app_frontend
     ports:
-      - 27017:27017
-    volumes: 
-      - mongo_db:/data/db
+      - 3003:3000
+    volumes:
+      - ./app_frontend/frontend:/app
   nginx:
     image: nginx:latest
     ports:
