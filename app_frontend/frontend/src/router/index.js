@@ -28,6 +28,10 @@ const router = createRouter({
         {
           path: '/account', name: 'account',
           component: ()=> import('../components/Account.vue')
+        },
+        {
+          path: '/transfer', name: 'transfer',
+          component: ()=> import('../components/Transfer.vue')
         }
       ]
     },

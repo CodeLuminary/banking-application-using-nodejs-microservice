@@ -7,6 +7,10 @@
     const toUser = ref('');
     const amount = ref('');
 
+    function setMenu(state){
+        isMake.value = state
+    }
+
     function sendMoney(){
         const obj = {
             from: banking.currentUser,
@@ -45,11 +49,11 @@
         </div>
         <div class="contentdiv maincontent">
            <div>
-                <button @click="setMenu(false)" :class="{txthighlight: !isCreate}">View Transfer</button>
-                <button v-if="banking.users[banking.currentUser].userRole=='admin'" @click="setMenu(true)" :class="{txthighlight: isCreate}">Make Transfer</button>
+                <button @click="setMenu(false)" :class="{txthighlight: !isMake}">View Transfer</button>
+                <button @click="setMenu(true)" :class="{txthighlight: isMake}">Make Transfer</button>
             </div>
             <div>
-                <div>
+                <div v-if="!isMake">
                     <table>
                         <thead>
                             <tr>
@@ -69,7 +73,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div>
+                <div v-else>
                     <label>To</label><br/>
                     <select v-model="toUser">
                         <option v-for="user in Object.values(banking.users)" :key="user._id" value="user._id">
@@ -84,3 +88,7 @@
         </div>
     </div>
 </template>
+<style scoped>
+    @import '@/css/user_dashboard.css';
+    @import '@/css/account.css';
+</style> 
